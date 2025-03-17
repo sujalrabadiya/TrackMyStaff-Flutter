@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 import 'package:track_my_staff/screens/splash.dart';
-import 'package:track_my_staff/services/chat_service.dart';
 import 'package:track_my_staff/theme.dart';
 
-void main() {
-  ChatService.getConversation(13, 17);
+void main() async {
+  await dotenv.load(fileName: ".env");
   runApp(const MyApp());
 }
 

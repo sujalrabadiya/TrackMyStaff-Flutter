@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
 import 'package:track_my_staff/models/chatMessageModel.dart';
@@ -91,8 +92,7 @@ class ChatService {
   }
 
   static Future<String?> uploadImageToCloudinary(File imageFile) async {
-    const cloudinaryUrl =
-        "https://api.cloudinary.com/v1_1/dhmj6l6q5/image/upload";
+    final cloudinaryUrl = dotenv.env['CLOUDINARY_URL'] ?? "";
 
     // Uint8List imageBytes = await imageFile.readAsBytes();
 
