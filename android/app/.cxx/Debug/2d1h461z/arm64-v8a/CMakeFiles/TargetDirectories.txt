@@ -1,0 +1,2 @@
+D:/Flutter Projects/TrackMyStaff/TrackMyStaff/android/app/.cxx/Debug/2d1h461z/arm64-v8a/CMakeFiles/edit_cache.dir
+D:/Flutter Projects/TrackMyStaff/TrackMyStaff/android/app/.cxx/Debug/2d1h461z/arm64-v8a/CMakeFiles/rebuild_cache.dir
