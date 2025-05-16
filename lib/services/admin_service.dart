@@ -1,11 +1,10 @@
 import 'dart:convert';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import 'package:track_my_staff/models/userModel.dart';
 
 class AdminService {
-  // static const String baseUrl = "https://localhost:7162/api";
-  static const String baseUrl = "http://192.168.169.194:7165/api";
-  // static const String baseUrl = "http://localhost:5046/api";
+  static String baseUrl = dotenv.env['WEB_API_URL'] ?? "";
 
   static Future<List<Map<String, dynamic>>?> getAllUsers(companyId) async {
     final Uri url = Uri.parse('$baseUrl/User/CompanyId/$companyId');

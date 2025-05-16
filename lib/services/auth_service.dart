@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/route_manager.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
@@ -9,9 +10,7 @@ import 'package:track_my_staff/screens/splash.dart';
 import 'package:track_my_staff/theme.dart';
 
 class AuthService {
-  // static const String baseUrl = "https://localhost:7162/api/Auth";
-  static const String baseUrl = "http://192.168.169.194:7165/api/Auth";
-  // static const String baseUrl = "http://localhost:5046/api/Auth";
+  static String baseUrl = dotenv.env['WEB_API_URL'].toString()+'/Auth' ?? "";
 
   static Future<Map<String, dynamic>?> login(LoginModel cred) async {
     final Uri url = Uri.parse("$baseUrl/login");

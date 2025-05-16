@@ -8,9 +8,7 @@ import 'package:track_my_staff/models/chatMessageSendModel.dart';
 import 'package:track_my_staff/screens/splash.dart';
 
 class ChatService {
-  // static const String baseUrl = "https://localhost:7162/api";
-  static const String baseUrl = "http://192.168.169.194:7165/api";
-  // static const String baseUrl = "http://localhost:5046/api";
+  static String baseUrl = dotenv.env['WEB_API_URL'] ?? "";
 
   static Future<bool> sendMessage(MessageModel message) async {
     final Uri url = Uri.parse("$baseUrl/Message/send");

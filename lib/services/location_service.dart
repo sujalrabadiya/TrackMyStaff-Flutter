@@ -1,13 +1,13 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:http/http.dart' as http;
 import 'package:track_my_staff/screens/splash.dart';
 
 class LocationService {
-  static const String baseUrl = "http://192.168.169.194:7165/api";
-  // static const String baseUrl = "http://localhost:5046/api";
+  static String baseUrl = dotenv.env['WEB_API_URL'] ?? "";
 
   static Future<void> sendLocation(int userId) async {
     try {
